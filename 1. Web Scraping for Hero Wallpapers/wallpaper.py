@@ -50,4 +50,4 @@ for hero in data:
     time.sleep(2)
     print('')
 
-print('新增皮肤数量:'+str(count))
+print('Total count of newly extracted wallpapers:'+str(count))
