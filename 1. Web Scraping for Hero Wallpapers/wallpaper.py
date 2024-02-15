@@ -3,6 +3,7 @@ import os
 import time
 
 count = 0
+
 # get file list
 source = os.getcwd()
 file_list = os.listdir(source)
@@ -32,20 +33,20 @@ for hero in data:
 
         if filename in file_list:
             print(hero_url)
-            print('已截取，跳过')
+            print('Extracted and skipped.')
             continue
         else:
             response = requests.get(hero_url)
             if response.status_code == 200:
                 print(hero_url)
-                print('正在截取')
+                print('Extracting...')
                 with open(filename,'wb') as f:
                     f.write(response.content)
                 count += 1
             else:
                 break
 
-    print('休息两秒')
+    print('Rest for two seconds...')
     time.sleep(2)
     print('')
 
